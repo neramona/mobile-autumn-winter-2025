@@ -4,7 +4,7 @@ import { useAuthStore } from './hooks/useAuthStore';
 import RegisterScreen from './components/RegisterScreen';
 import LoginScreen from './components/LoginScreen';
 import MainScreen from './components/MainScreen';
-import UseStateEffect from './components/useStateEffect';
+import UseStateEffect from './components/UseStateEffect';
 import UseMemo from './components/UseMemo';
 
 export default function App() {
