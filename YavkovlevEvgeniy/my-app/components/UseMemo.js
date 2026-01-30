@@ -18,7 +18,7 @@ const UseMemoDemo = ({ navigate }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>useMemo Demo</Text>
+      <Text style={styles.title}>useMemo</Text>
       <Text style={{ fontSize: 16, marginVertical: 8 }}>n: {n}</Text>
       <Text style={{ fontSize: 18, marginVertical: 8 }}>fib(n): {fib}</Text>
       <View style={{ height: 8 }} />

@@ -4,8 +4,9 @@ import { useAuthStore } from './hooks/useAuthStore';
 import RegisterScreen from './components/RegisterScreen';
 import LoginScreen from './components/LoginScreen';
 import MainScreen from './components/MainScreen';
-import UseStateEffect from './components/UseStateEffect';
+import PostsScreen from './components/PostsScreen';
 import UseMemo from './components/UseMemo';
+import UseStateEffect from './components/UseStateEffect';
 
 export default function App() {
   const isAuthenticated = useAuthStore((s) => s.isAuthenticated);
@@ -30,10 +31,12 @@ export default function App() {
     switch (route) {
       case 'main':
         return <MainScreen navigate={navigate} />;
-      case 'useStateEffect':
-        return <UseStateEffect navigate={navigate} />;
+      case 'posts':
+        return <PostsScreen navigate={navigate} />;
       case 'useMemo':
         return <UseMemo navigate={navigate} />;
+      case 'useStateEffect':
+        return <UseStateEffect navigate={navigate} />;
       default:
         return <MainScreen navigate={navigate} />;
     }
