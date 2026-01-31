@@ -74,8 +74,6 @@ const PostsScreen = ({ navigate }) => {
         api.request('/posts'),
         api.request('/posts/my')
       ])
-      console.log('posts load response all', resAll)
-      console.log('posts load response my', resMy)
 
       const arrAll = findArray(resAll) || findArray(resAll && resAll.data) || []
       const arrMy = findArray(resMy) || findArray(resMy && resMy.data) || []
@@ -170,13 +168,9 @@ const PostsScreen = ({ navigate }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Посты</Text>
+      <Text style={styles.title}>POST</Text>
 
-      <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginBottom: 12 }}>
-        <Button title="Создать" onPress={startCreate} />
-        <View style={{ width: 8 }} />
-        <Button title="Назад" onPress={() => navigate('main')} />
-      </View>
+      
 
       {(editing !== null) && (
         <View style={styles.editor}>
@@ -190,8 +184,6 @@ const PostsScreen = ({ navigate }) => {
         </View>
       )}
 
-      {loading && <ActivityIndicator size="small" />}
-      {error ? <Text style={styles.error}>{error}</Text> : null}
 
       <Text style={{ fontWeight: 'bold', marginTop: 6, marginBottom: 6 }}>Мои посты</Text>
       <FlatList
@@ -221,8 +213,13 @@ const PostsScreen = ({ navigate }) => {
           />
         )}
         ItemSeparatorComponent={() => <View style={{ height: 8 }} />}
-        contentContainerStyle={{ paddingBottom: 40 }}
+        contentContainerStyle={{ paddingBottom: 30 }}
       />
+      <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 12 }}>
+        <Button title="Создать" onPress={startCreate} />
+        <View style={{ width: 8 }} />
+        <Button title="Назад" onPress={() => navigate('main')} />
+      </View>
     </View>
   )
 }
